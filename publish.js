@@ -68,6 +68,9 @@ async function addItem() {
     if (commentBodyTextbox.value.length == 0) {
         console.log(commentBodyTextbox.value.length);
         return;
+    } else if (commentBodyTextbox.value.length > 500) {
+        commentBodyTextbox.value = "Comment too long! Max 500 characters.";
+        return;
     }
     else {
         const item = {
